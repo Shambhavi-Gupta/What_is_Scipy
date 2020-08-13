@@ -14,7 +14,7 @@ Statistics and random numbers - scipy.stats
 Numerical Integration - scipy.integrate
 Fast Fourier transforms - scipy.fftpack
 Signal Processing - scipy.signal
-Image manipulation – scipy.ndimage
+Image manipulation â€“ scipy.ndimage
 
 Why use SciPy
 
@@ -51,7 +51,8 @@ The standard way of import infSciPy modules and Numpy:
 from scipy import special   #same for other modules
 import numpy as np
 File Input / Output package:
-Scipy, I/O package, has a wide range of functions for work with different files format which are Matlab, Arff, Wave, Matrix Market, IDL, NetCDF, TXT, CSV and binary format.
+Scipy, I/O package, has a wide range of functions for work with different files format which are Matlab, Arff, Wave,
+Matrix Market, IDL, NetCDF, TXT, CSV and binary format.
 
 Let's we take one file format example as which are regularly use of MatLab:
 
@@ -59,7 +60,7 @@ Let's we take one file format example as which are regularly use of MatLab:
  from scipy import io as sio
  array = np.ones((4, 4))
  sio.savemat('example.mat', {'ar': array}) 
- data = sio.loadmat(‘example.mat', struct_as_record=True)
+ data = sio.loadmat(â€˜example.mat', struct_as_record=True)
  data['ar']
 Output:
 
@@ -76,7 +77,8 @@ Line 5: Get data from example.mat file
 Line 6: Print output.
 Special Function package
 scipy.special package contains numerous functions of mathematical physics.
-SciPy special function includes Cubic Root, Exponential, Log sum Exponential, Lambert, Permutation and Combinations, Gamma, Bessel, hypergeometric, Kelvin, beta, parabolic cylinder, Relative Error Exponential, etc..
+SciPy special function includes Cubic Root, Exponential, Log sum Exponential, Lambert, Permutation and Combinations, Gamma, Bessel,
+hypergeometric, Kelvin, beta, parabolic cylinder, Relative Error Exponential, etc..
 For one line description all of these function, type in Python console:
 help(scipy.special)	
 Output : 
@@ -131,7 +133,7 @@ com = comb(5, 2, exact = False, repetition=True)
 print(com)
 Output: 15.0
 
-Permutations –
+Permutations â€“
 
 scipy.special.perm(N,k)
 Example:
@@ -171,7 +173,7 @@ two_d_array = np.array([ [4,5], [3,2] ])
 linalg.det( two_d_array )
 Output: -7.0
 
-Inverse Matrix –
+Inverse Matrix â€“
 
 scipy.linalg.inv()
 Inverse Matrix of Scipy calculates the inverse of any square matrix.
@@ -188,7 +190,7 @@ Output:
 
 array( [[-0.28571429,  0.71428571],
        [ 0.42857143, -0.57142857]] )
-Eigenvalues and Eigenvector – scipy.linalg.eig()
+Eigenvalues and Eigenvector â€“ scipy.linalg.eig()
 
 The most common problem in linear algebra is eigenvalues and eigenvector which can be easily solved using eig() function.
 Now lets we find the Eigenvalue of (X) and correspond eigenvector of a two-dimensional square matrix.
