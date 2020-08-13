@@ -1,0 +1,211 @@
+What is SciPy?
+SciPy is an Open Source Python-based library, which is used in mathematics, scientific computing, Engineering, and technical computing.
+
+SciPy also pronounced as "Sigh Pi."
+
+Sub-packages of SciPy:
+
+File input/output - scipy.io
+Special Function - scipy.special
+Linear Algebra Operation - scipy.linalg
+Interpolation - scipy.interpolate
+Optimization and fit - scipy.optimize
+Statistics and random numbers - scipy.stats
+Numerical Integration - scipy.integrate
+Fast Fourier transforms - scipy.fftpack
+Signal Processing - scipy.signal
+Image manipulation – scipy.ndimage
+
+Why use SciPy
+
+SciPy contains varieties of sub packages which help to solve the most common issue related to Scientific Computation.
+SciPy is the most used Scientific library only second to GNU Scientific Library for C/C++ or Matlab's.
+Easy to use and understand as well as fast computational power.
+It can operate on an array of NumPy library.
+Numpy VS SciPy
+Numpy:
+
+Numpy is written in C and use for mathematical or numeric calculation.
+It is faster than other Python Libraries
+Numpy is the most useful library for Data Science to perform basic calculations.
+Numpy contains nothing but array data type which performs the most basic operation like sorting, shaping, indexing, etc.
+SciPy:
+
+SciPy is built in top of the NumPy
+SciPy is a fully-featured version of Linear Algebra while Numpy contains only a few features.
+Most new Data Science features are available in Scipy rather than Numpy.
+SciPy - Installation and Environment Setup
+You can also install SciPy in Windows via pip
+
+Python3 -m pip install --user numpy scipy 
+Install Scipy on Linux
+
+sudo apt-get install  python-scipy python-numpy
+Install SciPy in Mac
+
+sudo port install py35-scipy py35-numpy
+Before start to learning SciPy, you need to know basic functionality as well as different types of an array of NumPy
+
+The standard way of import infSciPy modules and Numpy:
+
+from scipy import special   #same for other modules
+import numpy as np
+File Input / Output package:
+Scipy, I/O package, has a wide range of functions for work with different files format which are Matlab, Arff, Wave, Matrix Market, IDL, NetCDF, TXT, CSV and binary format.
+
+Let's we take one file format example as which are regularly use of MatLab:
+
+ import numpy as np
+ from scipy import io as sio
+ array = np.ones((4, 4))
+ sio.savemat('example.mat', {'ar': array}) 
+ data = sio.loadmat(‘example.mat', struct_as_record=True)
+ data['ar']
+Output:
+
+array([[ 1., 1., 1., 1.],
+           [ 1., 1., 1., 1.],
+           [ 1., 1., 1., 1.],
+           [ 1., 1., 1., 1.]])
+Code Explanation
+
+Line 1 & 2: Import the essential library scipy with i/o package and Numpy.
+Line 3: Create 4 x 4, dimensional one's array
+Line 4: Store array in example.mat file.
+Line 5: Get data from example.mat file
+Line 6: Print output.
+Special Function package
+scipy.special package contains numerous functions of mathematical physics.
+SciPy special function includes Cubic Root, Exponential, Log sum Exponential, Lambert, Permutation and Combinations, Gamma, Bessel, hypergeometric, Kelvin, beta, parabolic cylinder, Relative Error Exponential, etc..
+For one line description all of these function, type in Python console:
+help(scipy.special)	
+Output : 
+NAME
+    scipy.special
+
+DESCRIPTION
+    ========================================
+    Special functions (:mod:`scipy.special`)
+    ========================================
+     
+    .. module:: scipy.special
+     
+    Nearly all of the functions below are universal functions and follow
+    broadcasting and automatic array-looping rules. Exceptions are noted.
+Cubic Root Function:
+Cubic Root function finds the cube root of values.
+
+Syntax:
+
+scipy.special.cbrt(x)
+Example:
+
+from scipy.special import cbrt
+#Find cubic root of 27 & 64 using cbrt() function
+cb = cbrt([27, 64])
+#print value of cb
+print(cb)
+Output: array([3., 4.])
+
+Exponential Function:
+Exponential function computes the 10**x element-wise.
+
+Example:
+
+from scipy.special import exp10
+#define exp10 function and pass value in its
+exp = exp10([1,10])
+print(exp)
+Output: [1.e+01 1.e+10]
+
+Permutations & Combinations:
+SciPy also gives functionality to calculate Permutations and Combinations.
+
+Combinations - scipy.special.comb(N,k)
+
+Example:
+
+from scipy.special import comb
+#find combinations of 5, 2 values using comb(N, k)
+com = comb(5, 2, exact = False, repetition=True)
+print(com)
+Output: 15.0
+
+Permutations –
+
+scipy.special.perm(N,k)
+Example:
+
+from scipy.special import perm
+#find permutation of 5, 2 using perm (N, k) function
+per = perm(5, 2, exact = True)
+print(per)
+Output: 20
+
+Log Sum Exponential Function
+Log Sum Exponential computes the log of sum exponential input element.
+
+Syntax :
+
+scipy.special.logsumexp(x) 
+Bessel Function
+Nth integer order calculation function
+
+Syntax :
+
+scipy.special.jn()
+Linear Algebra with SciPy
+Linear Algebra of SciPy is an implementation of BLAS and ATLAS LAPACK libraries.
+Performance of Linear Algebra is very fast compared to BLAS and LAPACK.
+Linear algebra routine accepts two-dimensional array object and output is also a two-dimensional array.
+Now let's do some test with scipy.linalg,
+
+Calculating determinant of a two-dimensional matrix,
+
+
+from scipy import linalg
+import numpy as np
+#define square matrix
+two_d_array = np.array([ [4,5], [3,2] ])
+#pass values to det() function
+linalg.det( two_d_array )
+Output: -7.0
+
+Inverse Matrix –
+
+scipy.linalg.inv()
+Inverse Matrix of Scipy calculates the inverse of any square matrix.
+
+Let's see,
+
+from scipy import linalg
+import numpy as np
+# define square matrix
+two_d_array = np.array([ [4,5], [3,2] ])
+#pass value to function inv()
+linalg.inv( two_d_array )
+Output:
+
+array( [[-0.28571429,  0.71428571],
+       [ 0.42857143, -0.57142857]] )
+Eigenvalues and Eigenvector – scipy.linalg.eig()
+
+The most common problem in linear algebra is eigenvalues and eigenvector which can be easily solved using eig() function.
+Now lets we find the Eigenvalue of (X) and correspond eigenvector of a two-dimensional square matrix.
+Example,
+
+from scipy import linalg
+import numpy as np
+#define two dimensional array
+arr = np.array([[5,4],[6,3]])
+#pass value into function
+eg_val, eg_vect = linalg.eig(arr)
+#get eigenvalues
+print(eg_val)
+#get eigenvectors
+print(eg_vect)
+Output:
+
+[ 9.+0.j -1.+0.j] #eigenvalues
+ [ [ 0.70710678 -0.5547002 ] #eigenvectors
+   [ 0.70710678  0.83205029] ]
